@@ -12,6 +12,6 @@ app.listen(3000, () => {
 })
 
 app.get("/aqi", async(req, res) => {
-  const { site } = await aqi();
-  res.json({ site })
+  const { data, sites, aqiValue } = await aqi();
+  res.send({ data, sites, aqiValue })
 })
